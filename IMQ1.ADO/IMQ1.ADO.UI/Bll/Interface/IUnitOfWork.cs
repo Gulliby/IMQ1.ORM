@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 namespace IMQ1.ADO.UI.Bll.Interface
 {
     /// <summary>
-    /// Interface for pattern Unit of work.
+    /// Provides methods for working with data
     /// </summary>
-    /// <seealso cref="System.IDisposable" />
     public interface IUnitOfWork : IDisposable
     {
         /// <summary>
@@ -23,8 +22,16 @@ namespace IMQ1.ADO.UI.Bll.Interface
             where T : class;
 
         /// <summary>
+        /// Creates repository for specific type
+        /// </summary>
+        /// <typeparam name="T">Type to create the repository for</typeparam>
+        /// <returns>Repository for the T type</returns>
+        IRepository<T> Repository<T>()
+            where T : class;
+
+        /// <summary>
         /// Saves changes on the context
         /// </summary>
         void SaveChanges();
-    }   
+    }
 }

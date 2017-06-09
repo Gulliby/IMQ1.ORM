@@ -1,4 +1,5 @@
 ﻿using IMQ1.ADO.ORM;
+using IMQ1.ADO.ORM.Entities;
 using IMQ1.ADO.UI.Bll;
 using IMQ1.ADO.UI.Bll.Interface;
 using IMQ1.ADO.UI.Dal;
@@ -19,7 +20,8 @@ namespace IMQ1.ADO.UI
     {
         static void Main(string[] args)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug\\",string.Empty);
+            string path = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug\\", 
+                string.Empty);
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
             
             IUnitOfWork uow = new UnitOfWork<NorthwindContext>(new NorthwindContext(ConfigurationManager.ConnectionStrings["NorthwindContext"].ConnectionString));

@@ -72,7 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bll\Interface\IRepository.cs" />
     <Compile Include="Bll\Interface\IUnitOfWork.cs" />
+    <Compile Include="Bll\Repository.cs" />
     <Compile Include="Bll\UnitOfWork.cs" />
     <Compile Include="Dal\Interface\IResultService.cs" />
     <Compile Include="Dal\ResultService.cs" />

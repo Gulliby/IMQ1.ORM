@@ -19,10 +19,6 @@ namespace IMQ1.ADO.UI.Bll
         private readonly DbContext _context;
         private bool _disposed;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnitOfWork{TContext}"/> class.
-        /// </summary>
-        /// <param name="context">The context.</param>
         public UnitOfWork(TContext context)
         {
             _context = context;
@@ -39,12 +35,24 @@ namespace IMQ1.ADO.UI.Bll
             where T : class
         {
             IQueryable<T> query = _context.Set<T>();
+
             if (navigations == null || navigations.Length == 0)
             {
                 return query;
             }
 
             return navigations.Aggregate(query, (current, navigation) => current.Include(navigation));
+        }
+
+        /// <summary>
+        /// Creates repository for specific type
+        /// </summary>
+        /// <typeparam name="TItem">Type to create the repository for</typeparam>
+        /// <returns>Repository for the TItem type</returns>
+        public IRepository<TItem> Repository<TItem>()
+            where TItem : class
+        {
+            return new Repository<TItem>(_context);
         }
 
         /// <summary>
@@ -65,10 +73,6 @@ namespace IMQ1.ADO.UI.Bll
             GC.SuppressFinalize(this);
         }
 
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
         protected virtual void Dispose(bool disposing)
         {
             if (!_disposed)

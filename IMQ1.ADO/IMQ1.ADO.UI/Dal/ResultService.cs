@@ -2,6 +2,8 @@
 using IMQ1.ADO.UI.Bll.Interface;
 using IMQ1.ADO.UI.Dal.Interface;
 using System.Linq;
+using System;
+using System.Collections.Generic;
 
 namespace IMQ1.ADO.UI.Dal
 {
@@ -11,6 +13,12 @@ namespace IMQ1.ADO.UI.Dal
         public ResultService(IUnitOfWork uow)
         {
             _uow = uow;
+        }
+
+        public void AddNewEmployee(Employee employee)
+        {
+            _uow.Repository<Employee>().Add(employee);
+            _uow.SaveChanges();
         }
 
         public dynamic GetEmployees(string region)
