@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace IMQ1.ADO.UI.Bll.Interface
+namespace IMQ1.ADO.UI.DAL.Interface
 {
     /// <summary>
     /// Handles a set of items
@@ -17,7 +13,7 @@ namespace IMQ1.ADO.UI.Bll.Interface
         /// Adds entity to the set
         /// </summary>
         /// <param name="entity">Entity to add</param>
-        void Add(T entity);
+        void AddOrUpdate(T entity);
 
         /// <summary>
         /// Adds entity list to the set

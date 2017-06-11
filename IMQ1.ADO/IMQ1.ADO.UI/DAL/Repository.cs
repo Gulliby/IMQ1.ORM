@@ -1,12 +1,10 @@
-﻿using IMQ1.ADO.UI.Bll.Interface;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using IMQ1.ADO.UI.DAL.Interface;
 
-namespace IMQ1.ADO.UI.Bll
+namespace IMQ1.ADO.UI.DAL
 {
     /// <summary>
     /// Handles a set of items
@@ -28,9 +26,9 @@ namespace IMQ1.ADO.UI.Bll
         /// Adds entity to the set
         /// </summary>
         /// <param name="entity">Entity to add</param>
-        public void Add(T entity)
+        public void AddOrUpdate(T entity)
         {
-            _dbset.Add(entity);
+            _dbset.AddOrUpdate(entity);
         }
 
         /// <summary>

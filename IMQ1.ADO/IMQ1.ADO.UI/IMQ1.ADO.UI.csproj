@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IMQ1.ADO.UI</RootNamespace>
     <AssemblyName>IMQ1.ADO.UI</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,12 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bll\Interface\IRepository.cs" />
-    <Compile Include="Bll\Interface\IUnitOfWork.cs" />
-    <Compile Include="Bll\Repository.cs" />
-    <Compile Include="Bll\UnitOfWork.cs" />
-    <Compile Include="Dal\Interface\IResultService.cs" />
-    <Compile Include="Dal\ResultService.cs" />
+    <Compile Include="DAL\Interface\IRepository.cs" />
+    <Compile Include="DAL\Interface\IUnitOfWork.cs" />
+    <Compile Include="DAL\Repository.cs" />
+    <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="BLL\Interface\IResultService.cs" />
+    <Compile Include="BLL\ResultService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

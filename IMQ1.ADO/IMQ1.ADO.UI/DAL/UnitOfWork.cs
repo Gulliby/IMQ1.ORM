@@ -1,13 +1,11 @@
-﻿using IMQ1.ADO.UI.Bll.Interface;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using IMQ1.ADO.UI.DAL.Interface;
 
-namespace IMQ1.ADO.UI.Bll
+namespace IMQ1.ADO.UI.DAL
 {
     /// <summary>
     /// Provides methods for working with underlying data context
@@ -59,9 +57,28 @@ namespace IMQ1.ADO.UI.Bll
         /// Saves changes on the context
         /// </summary>
         public void SaveChanges()
-        {
-            _context.ChangeTracker.DetectChanges();
-            _context.SaveChanges();
+        { 
+            try
+            {
+                _context.ChangeTracker.DetectChanges();
+                _context.SaveChanges();
+            }
+            //Should be deleted.
+            //Just for task was added.
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
         }
 
         /// <summary>

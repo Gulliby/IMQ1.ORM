@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace IMQ1.ADO.ORM.Entities
 {
     [Table("Region")]
-    public partial class Region
+    public class Region
     {
         public Region()
         {

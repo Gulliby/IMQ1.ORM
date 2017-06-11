@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace IMQ1.ADO.ORM.Entities
 {
     [Table("Order Details")]
-    public partial class Order_Detail
+    public class Order_Detail
     {
         [Key]
         [Column(Order = 0)]

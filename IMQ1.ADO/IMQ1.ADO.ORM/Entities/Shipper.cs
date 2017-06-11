@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace IMQ1.ADO.ORM.Entities
 {
-    public partial class Shipper
+    public class Shipper
     {
         public Shipper()
         {

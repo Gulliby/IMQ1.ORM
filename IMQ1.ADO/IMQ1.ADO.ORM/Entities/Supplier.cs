@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IMQ1.ADO.ORM.Entities
 {
-    public partial class Supplier
+    public class Supplier
     {
         public Supplier()
         {

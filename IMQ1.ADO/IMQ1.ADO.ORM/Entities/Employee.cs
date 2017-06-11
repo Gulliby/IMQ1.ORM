@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IMQ1.ADO.ORM.Entities
 {
-    public partial class Employee
+    public class Employee
     {
         public Employee()
         {

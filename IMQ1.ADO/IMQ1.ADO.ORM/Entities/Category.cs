@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IMQ1.ADO.ORM.Entities
 {
-    public partial class Category
+    public class Category
     {
         public Category()
         {

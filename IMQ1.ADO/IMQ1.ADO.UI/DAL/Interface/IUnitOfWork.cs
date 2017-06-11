@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace IMQ1.ADO.UI.Bll.Interface
+namespace IMQ1.ADO.UI.DAL.Interface
 {
     /// <summary>
     /// Provides methods for working with data
